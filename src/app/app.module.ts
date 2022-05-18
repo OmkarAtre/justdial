@@ -13,6 +13,24 @@ import { ItemsComponent } from './items/items.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import {HttpClientModule} from "@angular/common/http"
+import { RouterModule, Routes } from '@angular/router';
+import { HomecomponentComponent } from './homecomponent/homecomponent.component';
+import { RxComponent } from './rx/rx.component';
+
+const routesconfig:Routes=[
+  {
+    path:"",
+    component:HomecomponentComponent
+  },
+  {
+    path:"contact",
+    component:ContactUsComponent
+  },
+  {
+    path:"list",
+    component:ItemsComponent
+  }
+]
 
 @NgModule({
   declarations: [
@@ -25,12 +43,15 @@ import {HttpClientModule} from "@angular/common/http"
     ListItemsComponent,
     ItemsComponent,
     AboutUsComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    HomecomponentComponent,
+    RxComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routesconfig),
   ],
   providers: [],
   bootstrap: [AppComponent]

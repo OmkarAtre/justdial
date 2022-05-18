@@ -14,6 +14,7 @@ export class ListItemsComponent implements OnInit {
     console.log("i am in list items class");
     this.http.get("https://reqres.in/api/users?page=2").subscribe((data)=>{
       this.code=data;
+      console.log(data);
 
     })
    }
